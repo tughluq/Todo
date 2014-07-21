@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'katip',
@@ -87,13 +88,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "katip/static/").replace('\\', '/'),
     #os.path.join(BASE_DIR, "static"),
-    'F:/MineProject/Todo/katip/static/',
+    #'E:/DjangoProject/Todo/katip/static/',
 )
 
 
 TEMPLATE_DIRS = (
-    #'/path/to/mysite/templates', 
-    'F:/MineProject/Todo/katip/templates',# 将此处改为你的目录。
+    #'/path/to/mysite/templates',
+    os.path.join(BASE_DIR, "katip/templates").replace('\\', '/'),
+    #'E:/DjangoProject/Todo/katip/templates',# 将此处改为你的目录。
 )
 
