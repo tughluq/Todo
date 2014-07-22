@@ -8,25 +8,25 @@
             <textarea name="todo" class="txtodo" id="txtodo" required="required">{{ todo.todo }}</textarea>
             <fieldset>
                 <label class="radio inline" for="priority">
-                    <span class="label label-info">Priority</span>
+                    <span class="label label-info">دەرىجىسى</span>
                 </label>
                 <label class="radio inline" for="priority">
                     <input type="radio" name="priority" value="1" {% if todo.priority == '1' %} checked{% endif %}/>
-                    <span class="label label-important">重要</span>
+                    <span class="label label-important">مۇھىم</span>
                 </label>
                 <label class="radio inline" for="priority">
                     <input type="radio" name="priority" value="2" {% if todo.priority == '2' %} checked{% endif %}/>
-                    <span class="label label-warning">警告</span>
+                    <span class="label label-warning">دىققەت</span>
                 </label>
                 <label class="radio inline" for="priority">
                     <input type="radio" name="priority" value="3" {% if todo.priority == '3' %} checked{% endif %}/>
-                    <span class="label label-success">成功</span>
+                    <span class="label label-success">تامام</span>
                 </label>
             </fieldset>
         </div>
         <div class="modal-footer">
-            <button class="btn"  data-dismiss="modal" aria-hidden="true">Close</button>
-            <button id="send" class="btn btn-success" type="submit" name="submit" >Save changes</button>
+            <button class="btn"  data-dismiss="modal" aria-hidden="true">تاقاش</button>
+            <button id="send" class="btn btn-success" type="submit" name="submit" >ساقلاش</button>
         </div>
         </form>
 {% endblock %}

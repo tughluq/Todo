@@ -4,7 +4,7 @@
     <thead>
         <tr>
             <td>
-                <h3 class="text-success">待办事项</h3>
+                <h3 class="text-success">ھەل قىلىشقا تېگىشلىك ئىشلار</h3>
             </td>
         </tr>
     </thead>
@@ -22,9 +22,9 @@
             <td class="todo">{{ todo.todo }}</td>
             <td class="te">
                 <div class="span2">
-                    <a href="{% url "finish" todo.id %}" title="finish"><i class=" icon-ok"></i></a>
-                    <a href="{% url "update" todo.id %}" title="edit"><i class="icon-edit"></i></a>
-                    <a href="{% url "delete" todo.id %}" title="delete"><i class="icon-trash"></i></a>                          
+                    <a href="{% url "finish" todo.id %}" title="تامام"><i class=" icon-ok"></i></a>
+                    <a href="{% url "update" todo.id %}" title="تەھرىرلەش"><i class="icon-edit"></i></a>
+                    <a href="{% url "delete" todo.id %}" title="ئۆچۈرۈش"><i class="icon-trash"></i></a>                          
                 </div>
             </td>
         </tr>
@@ -34,9 +34,9 @@
             <td class="ftodo muted">{{ ftodo.todo }}</td>
             <td class="te">
                 <div class="span2">
-                    <a href="{% url "backout" ftodo.id %}" title="finish"><i class=" icon-repeat"></i></a>
-                    <a href="{% url "update" ftodo.id %}" title="edit"><i class="icon-edit"></i></a>
-                    <a href="{% url "delete" ftodo.id %}" title="delete"><i class="icon-trash"></i></a>
+                    <a href="{% url "backout" ftodo.id %}" title="تامام"><i class=" icon-repeat"></i></a>
+                    <a href="{% url "update" ftodo.id %}" title="تەھرىرلەش"><i class="icon-edit"></i></a>
+                    <a href="{% url "delete" ftodo.id %}" title="ئۆچۈرۈش"><i class="icon-trash"></i></a>
                 </div>
             </td>
         </tr>
@@ -44,7 +44,7 @@
     </tbody>
 </table>
 <a class="btn btn-success" href="#myModal" role="button" data-toggle="modal">
-    <i class="icon-plus icon-white"></i><span > ADD</span>
+    <i class="icon-plus icon-white"></i><span>ئىش قوشۇش</span>
 </a>
 {% endblock %}
 </div>
