@@ -15,7 +15,7 @@ from katip import views
 urlpatterns = patterns(
     '',
     url(r'^$', views.todolist, name='todo'),
-    url(r'^addtodo/$', views.addTodo, name='add'),
+    #url(r'^addtodo/$', views.addTodo, name='add'),
 )
 
 

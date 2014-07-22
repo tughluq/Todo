@@ -21,6 +21,7 @@ def todolist(request):
         {'todolist': todolist, 'finishtodos': finishtodos},
         context_instance=RequestContext(request))
 
+
 def addTodo(request):
     if request.method == 'POST':
         atodo = request.POST['todo']
