@@ -40,3 +40,59 @@ def addTodo(request):
         return render_to_response('simpleTodo.html',
             {'todolist': todolist, 'finishtodos': finishtodos})
 
+def todofinish(request, id=''):
+    todo = Katip.objects.get(id=id)
+    if todo.flag == '1':
+        todo.flag = '0'
+        todo.save()
+        return HttpResponseRedirect('/todos/')
+    todolist = Katip.objects.filter(flag=1)
+    return render_to_response('simpleTodo.html', {'todolist': todolist},
+        context_instance=RequestContext(request))
+
+def todoback(request, id=''):
+    todo = Katip.objects.get(id=id)
+    if todo.flag == '0':
+        todo.flag = '1'
+        todo.save()
+        return HttpResponseRedirect('/todos/')
+    todolist = Katip.objects.filter(flag=1)
+    return render_to_response('simpleTodo.html', {'todolist': todolist},
+        context_instance=RequestContext(request))
+
+def tododelete(request, id=''):
+    try:
+        todo = Katip.objects.get(id=id)
+    except Exception:
+        raise Http404
+    if todo:
+        todo.delete()
+        return HttpResponseRedirect('/todos/')
+    todolist = Katip.objects.filter(flag=1)
+    return render_to_response('simpleTodo.html', {'todolist': todolist},
+        context_instance=RequestContext(request))
+
+def updatetodo(request, id=''):
+    if request.method == 'POST':
+        try:
+            todo = Katip.objects.get(id=id)
+        except Exception:
+            return HttpResponseRedirect('/todos/')
+        atodo = request.POST['todo']
+        priority = request.POST['priority']
+        todo.todo = atodo
+        todo.priority = priority
+        todo.save()
+        return HttpResponseRedirect('/todos/')
+    else:
+        try:
+            todo = Katip.objects.get(id=id)
+        except Exception:
+            raise Http404
+        return render_to_response('updatatodo.html', {'todo': todo},
+            context_instance=RequestContext(request))
+
+
+
+
+
